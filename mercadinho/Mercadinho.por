@@ -3,7 +3,7 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro industri, 
+		inteiro indu
 	}
 }
 /* $$$ Portugol Studio $$$ 
