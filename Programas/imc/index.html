@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador de IMC</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="divFather">
+        <div class="divProperties">
+            <h1>Calculadora de IMC</h1>
+            <h2>Propriedades:</h2>
+            <div class="divState">
+                <div class="divClassification">
+                    <p>MAGREZA</p>
+                    <p>NORMAL</p>
+                    <p>SOBREPESO</p>
+                    <p>OBESIDADE</p>
+                    <p>OBESIDADE GRAVE</p>
+                </div>
+                <div class="divClassification">
+                    <p>MENOR QUE 18,5</p>
+                    <p>ENTRE 18,5 E 24,9</p>
+                    <p>ENTRE 25,0 E 29,9</p>
+                    <p>ENTRE 30,0 E 39,9</p>
+                    <p>MAIOR QUE 40,0</p>
+                </div>
+            </div>
+        
+        </div>
+
+        <div class="divInformation">
+            <label>Informe o seu peso: </label>
+            <input id="inputWeight">
+            <label>Informe sua altura:</label>
+            <input id="inputHeight">
+            <div class="divButton">
+                <button class="btn" id="buttonCalculate">Calcular IMC</button>
+                <button class="btn" id="buttonClear" class="buttonClear">Limpar</button>
+            </div>
+            <div id="divCalculate">
+                <h1 id="h1Result"  class="a">Resultado</h1>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
