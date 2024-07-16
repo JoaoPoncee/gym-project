@@ -3,7 +3,8 @@
 *{
     padding: 0;
     margin: 0;
-    
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
 }
 
 .main{
@@ -11,6 +12,7 @@
     justify-content: center;
     background-color: rgb(11, 1, 43);
     height: 667px;
+
 }
 
 .container{
@@ -30,14 +32,12 @@
     width: 100%;
     height: 60px;
     border: none;
-    border-radius: 10px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-style: italic;   
+    border-radius: 10px;   
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    font-style: italic;
 }
 
 .btn-week:hover{
@@ -48,4 +48,34 @@
     width: 30px;
     height: 30px;
     
+}
+
+.training{
+    /* display: none; */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.training .training-content{
+    background-color: #568ade;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+}
+
+.btn-add-training{
+    width: 80%;
+    height: 45px;
+    border: none;
+    font-style: italic;
 }
