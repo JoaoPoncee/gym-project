@@ -1,21 +1,25 @@
 
-// const switchModal = () =>{
-    
-//     const modal = document.querySelector('.modal')
-//     const actualStyle = modal.style.display
-//     if(actualStyle == 'block'){
-//         modal.style.display = 'none'
-//     }else{
-//         modal.style.display = 'block'
-//     }
-// }
 
-function pageNavigation(){
+function PageNavigation(){
     window.location.href = 'add-training.html'
 }
 
-const buttonWeek = document.querySelectorAll('button.btn-week')
-buttonWeek.addEventListener('click', ()=>{
-    pageNavigation()
-})
+function BackPage(){
+    window.location.href = 'index.html'
+}
+
+function OpenModal(){
+    const modal = document.querySelector('.modal')
+    const arrowBack = document.querySelector('.img-arrow, .back-home')
+    arrowBack.style.marginTop = '40px'
+    arrowBack.style.position = 'static'
+    modal.style.display = 'flex'
+    const actualStyle = modal.style.display
+    if(actualStyle == 'block'){
+        modal.style.display = 'none'
+    }else{
+        modal.style.display = 'block'
+    }
+}
+
 

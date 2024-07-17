@@ -16,9 +16,32 @@
   <body>
     <div class="main">
       <div class="container">
-        <div class="training">
+        <div class="div-training">
           <div class="training-content">
-            <button class="btn-add-training">Add Training</button>
+            <button onclick="OpenModal()" class="btn-add-training">
+              Add Training
+            </button>
+
+            <div class="modal">
+              <form class="form">
+                <label>Exercise name:</label>
+                <input type="text" class="input-form exercise" />
+                <label>Repeat</label>
+                <input type="text" class="input-form repeat" />
+                <label>Series</label>
+                <input type="text" class="input-form series" />
+                <button class="btn-include-training">Include training</button>
+              </form>
+            </div>
+
+            <div class="training">
+              <label></label>
+              <label></label>
+            </div>
+
+            <button onclick="BackPage()" class="back-home">
+              <img class="img-arrow" src="assets/img/flecha.png" alt="" />
+            </button>
           </div>
         </div>
       </div>
