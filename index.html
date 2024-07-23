@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gym Project</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,13 +16,13 @@
   <body>
     <div class="main">
       <div class="container">
-        <button onclick="PageNavigation()" class="btn-week"><img class="icon" src="assets/img/academia.png" alt="">DOMINGO</button>
-        <button onclick="PageNavigation()" class="btn-week"><img class="icon" src="assets/img/academia.png" alt="">SEGUNDA</button>
-        <button onclick="PageNavigation()" class="btn-week"><img class="icon" src="assets/img/academia.png" alt="">TERÇA</button>
-        <button onclick="PageNavigation()" class="btn-week"><img class="icon" src="assets/img/academia.png" alt="">QUARTA</button>
-        <button onclick="PageNavigation()" class="btn-week"><img class="icon" src="assets/img/academia.png" alt="">QUINTA</button>
-        <button onclick="PageNavigation()" class="btn-week"><img class="icon" src="assets/img/academia.png" alt="">SEXTA</button>
-        <button onclick="PageNavigation()" class="btn-week"><img class="icon" src="assets/img/academia.png" alt="">SÁBADO</button>
+        <button onclick="pageNavigation('dom')" class="btn-week"><img class="icon" src="assets/img/academia.png" alt="">DOMINGO</button>
+        <button onclick="pageNavigation('seg')" class="btn-week"><img class="icon" src="assets/img/academia.png" alt="">SEGUNDA</button>
+        <button onclick="pageNavigation('ter')" class="btn-week"><img class="icon" src="assets/img/academia.png" alt="">TERÇA</button>
+        <button onclick="pageNavigation('qua')" class="btn-week"><img class="icon" src="assets/img/academia.png" alt="">QUARTA</button>
+        <button onclick="pageNavigation('qui')" class="btn-week"><img class="icon" src="assets/img/academia.png" alt="">QUINTA</button>
+        <button onclick="pageNavigation('sex')" class="btn-week"><img class="icon" src="assets/img/academia.png" alt="">SEXTA</button>
+        <button onclick="pageNavigation('sab')" class="btn-week"><img class="icon" src="assets/img/academia.png" alt="">SÁBADO</button>
         </div>
       </div>
     </div>

@@ -7,10 +7,14 @@
     font-weight: 600;
 }
 
+body{
+    background-color: rgb(11, 1, 43);
+
+}
+
 .main{
     display: flex;
     justify-content: center;
-    background-color: rgb(11, 1, 43);
     height: 667px;
 
 }
