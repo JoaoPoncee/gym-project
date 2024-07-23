@@ -7,10 +7,14 @@
     font-weight: 600;
 }
 
+body{
+    background-color: rgb(11, 1, 43);
+
+}
+
 .main{
     display: flex;
     justify-content: center;
-    background-color: rgb(11, 1, 43);
     height: 667px;
 
 }
@@ -50,7 +54,7 @@
     
 }
 
-.training{
+.div-training{
     /* display: none; */
     position: fixed;
     z-index: 1;
@@ -61,7 +65,7 @@
     overflow: auto;
 }
 
-.training .training-content{
+.div-training .training-content{
     background-color: #568ade;
     margin: auto;
     padding: 20px;
@@ -78,4 +82,56 @@
     height: 45px;
     border: none;
     font-style: italic;
+}
+
+.back-home{
+    width: 30%;
+    height: 40px;
+    margin-bottom: 85px;
+    bottom: 0;
+    position: fixed;
+    border: none;
+    background-color: #568ade;
+}
+
+.img-arrow{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.training{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+    width: 90%;
+
+}
+
+.modal{
+    background-color: rgb(11, 1, 43);
+    margin: 0px;
+    padding-bottom: 3px;
+    border-radius: 5px;
+    width: 70%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+    position: fixed;
+    color: white;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.btn-include-training{
+    margin-top: 10px;
 }
