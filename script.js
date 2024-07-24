@@ -36,10 +36,77 @@ function closeModal() {
   seriesExercise.value = " ";
 }
 
+function addTraining(day) {
+
+  
+
+  let divTraining = document.createElement('div')
+  divTraining.className = 'training';
+
+  let divExercise = document.createElement('div')
+  divExercise.className = 'exercise';
+  divTraining.appendChild(divExercise);
+
+  let pExercise = document.createElement('p')
+  divExercise.appendChild(pExercise);
+
+  let divRepeatAndSeries = document.createElement('div');
+  divRepeatAndSeries.className = 'repeat-series';
+  divTraining.appendChild(divRepeatAndSeries);
+
+  let pRepeatAndSeries = document.createElement('p');
+  divRepeatAndSeries.appendChild(pRepeatAndSeries);
+
+  let divBtnActions = document.createElement('div');
+  divBtnActions.className = 'div-btn-actions';
+  divTraining.appendChild(divBtnActions);
+
+  let btnPlus = document.createElement('button');
+  btnPlus.className = 'style';
+  divBtnActions.appendChild(btnPlus);
+
+  let btnTrash = document.createElement('button');
+  btnTrash.className = 'style';
+  divBtnActions.appendChild(btnTrash);
+
+  let btnPencil = document.createElement('button');
+  btnPencil.className = 'style';
+  divBtnActions.appendChild(btnPencil);
+
+  let imgPlus = document.createElement('img')
+  imgPlus.src = 'assets/img/plus.png'
+  imgPlus.className = 'icon-actions'
+  btnPlus.appendChild(imgPlus)
+
+  let imgTrash = document.createElement('img')
+  imgTrash.src = 'assets/img/trash.png'
+  imgTrash.className = 'icon-actions'
+  btnTrash.appendChild(imgTrash)
+
+  let imgPencil = document.createElement('img')
+  imgPencil.src = 'assets/img/pencil.png'
+  imgPencil.className = 'icon-actions'
+  btnPencil.appendChild(imgPencil)
+
+  
+  
+  let training = JSON.parse(localStorage.getItem(day)) || [];
+  training.map((train) =>{
+    pExercise.innerHTML = train.name
+    document.getElementById('trainingsContainer').appendChild(divTraining);
+  })
+
+}
+
+
+
+
 btnAdd.addEventListener("click", (e) => {
   e.preventDefault();
+  
   const params = new URLSearchParams(document.location.search);
   const day = params.get("day");
+  addTraining(day)
   // Recupera os dados existentes do localStorage
   let training = JSON.parse(localStorage.getItem(day)) || [];
   // Cria o novo objeto de treinamento
@@ -54,3 +121,5 @@ btnAdd.addEventListener("click", (e) => {
   localStorage.setItem(day, JSON.stringify(training));
   closeModal();
 });
+
+
