@@ -102,14 +102,15 @@ body{
 
 .training{
     margin-top: 10px;
-    display: flex;
-    flex-direction: row;
     font-size: 16px;
     justify-content: space-evenly;
     /* border: 1px solid black; */
     width: 100%;    
     height: 80%;
     color: white;
+    display: flex;
+  flex-direction: row /* Coloca os elementos em uma coluna */
+  gap: 10px;
 }
 
 .repeat-series{
@@ -117,7 +118,7 @@ body{
     flex-direction: row;
     gap: 3px;
     justify-content: space-between;
-    margin-top: 5px;
+    margin-top: 1px;
 }
 
 .exercise{
@@ -139,7 +140,7 @@ body{
 .div-btn-actions{
     display: flex;
     gap: 12px;
-    margin-top: 5px;
+    margin-top: 20px;
 }
 
 .modal{
@@ -165,4 +166,22 @@ body{
 
 .btn-include-training{
     margin-top: 10px;
+}
+
+#trainingsContainer{
+    height: 80%;
+    width: 80%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.div-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 30%;
+    background-color: black;
+    gap: 10px;
 }
