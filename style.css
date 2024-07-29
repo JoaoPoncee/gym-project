@@ -109,8 +109,8 @@ body{
     height: 80%;
     color: white;
     display: flex;
-  flex-direction: row /* Coloca os elementos em uma coluna */
-  gap: 10px;
+   /* Coloca os elementos em uma coluna */
+  
 }
 
 .repeat-series{
@@ -123,6 +123,10 @@ body{
 
 .exercise{
     margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
 }
 
 .icon-actions{
@@ -169,19 +173,21 @@ body{
 }
 
 #trainingsContainer{
-    height: 80%;
+    height: 400px;
     width: 80%;
     overflow: auto;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    border: black solid 1px;
+    
 }
 
 .div-content{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 30%;
-    background-color: black;
-    gap: 10px;
+    height: 70px;
+
 }
