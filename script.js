@@ -46,8 +46,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
 })
 
 function addTraining(day) {
-
-  
   
   // let training = JSON.parse(localStorage.getItem(day)) || [];
   // training.map((train) =>{
@@ -115,7 +113,7 @@ function addTraining(day) {
 
   const trainingsContainer = document.getElementById('trainingsContainer');
   trainingsContainer.innerHTML = '';
-
+  
   // Recupera os treinos do localStorage
   let training = JSON.parse(localStorage.getItem(day)) || [];
 
@@ -153,6 +151,7 @@ function addTraining(day) {
     imgPlus.className = 'icon-actions';
     btnPlus.appendChild(imgPlus);
     divBtnActions.appendChild(btnPlus);
+    
 
     let btnTrash = document.createElement('button');
     btnTrash.className = 'style';
@@ -161,6 +160,11 @@ function addTraining(day) {
     imgTrash.className = 'icon-actions';
     btnTrash.appendChild(imgTrash);
     divBtnActions.appendChild(btnTrash);
+    
+    btnTrash.addEventListener('click', ()=>{
+      console.log('treino limpo');
+    })
+
 
     let btnPencil = document.createElement('button');
     btnPencil.className = 'style';

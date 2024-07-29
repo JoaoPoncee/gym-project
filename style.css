@@ -178,8 +178,8 @@ body{
     overflow: auto;
     display: flex;
     flex-direction: column;
-    border: black solid 1px;
-    
+    gap: 4px;
+    margin-top: 5px;
 }
 
 .div-content{
@@ -189,5 +189,5 @@ body{
     justify-content: center;
     width: 100%;
     height: 70px;
-
+    background-color: #1f3455;
 }
