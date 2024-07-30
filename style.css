@@ -70,7 +70,7 @@ body{
     margin: auto;
     padding: 20px;
     border-radius: 5px;
-    width: 70%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,13 +102,49 @@ body{
 
 .training{
     margin-top: 10px;
+    font-size: 16px;
+    justify-content: space-evenly;
+    /* border: 1px solid black; */
+    width: 100%;    
+    height: 80%;
+    color: white;
+    display: flex;
+   /* Coloca os elementos em uma coluna */
+  
+}
+
+.repeat-series{
     display: flex;
     flex-direction: row;
-    font-size: 16px;
+    gap: 3px;
     justify-content: space-between;
-    /* border: 1px solid black; */
-    width: 90%;
+    margin-top: 1px;
+}
 
+.exercise{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.icon-actions{
+    width: 100%;
+    height: 100%;
+}
+
+.style{
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+}
+
+.div-btn-actions{
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
 }
 
 .modal{
@@ -134,4 +170,24 @@ body{
 
 .btn-include-training{
     margin-top: 10px;
+}
+
+#trainingsContainer{
+    height: 400px;
+    width: 80%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 5px;
+}
+
+.div-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+    background-color: #1f3455;
 }
