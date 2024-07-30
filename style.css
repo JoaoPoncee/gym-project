@@ -101,16 +101,18 @@ body{
 }
 
 .training{
-    margin-top: 10px;
+
     font-size: 16px;
-    justify-content: space-evenly;
+    justify-content: space-between;
+
     /* border: 1px solid black; */
     width: 100%;    
     height: 80%;
     color: white;
     display: flex;
    /* Coloca os elementos em uma coluna */
-  
+   margin-left: 15px;
+
 }
 
 .repeat-series{
@@ -122,7 +124,7 @@ body{
 }
 
 .exercise{
-    margin-top: 5px;
+    margin-top: 1px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -144,7 +146,9 @@ body{
 .div-btn-actions{
     display: flex;
     gap: 12px;
-    margin-top: 20px;
+    margin-top: 15px;
+    margin-right: 15px;
+    
 }
 
 .modal{
@@ -152,7 +156,7 @@ body{
     margin: 0px;
     padding-bottom: 3px;
     border-radius: 5px;
-    width: 70%;
+    width: 80%;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -174,12 +178,12 @@ body{
 
 #trainingsContainer{
     height: 400px;
-    width: 80%;
+    width: 300px;
     overflow: auto;
     display: flex;
     flex-direction: column;
     gap: 4px;
-    margin-top: 5px;
+    margin-top: 7px;
 }
 
 .div-content{
@@ -190,4 +194,5 @@ body{
     width: 100%;
     height: 70px;
     background-color: #1f3455;
+    border-radius: 10px;
 }

@@ -4,9 +4,6 @@ const seriesExercise = document.querySelector(".input-form-series");
 const btnWeek = document.querySelectorAll(".btn-week");
 const btnAdd = document.querySelector("#btn-add");
 
-
-
-
 function pageNavigation(day) {
   const novaURL = `add-training.html?day=${day}`;
   window.location.href = novaURL;
@@ -45,72 +42,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
   addTraining(day)
 })
 
-function addTraining(day) {
+
+
+function addTraining(day, ) {
   
-  // let training = JSON.parse(localStorage.getItem(day)) || [];
-  // training.map((train) =>{
-
-  //   let divContent = document.createElement('div');
-  // divContent.className = 'div-content';
-  
-
-  // // Criando a seção de treino
-  // let divTraining = document.createElement('div');
-  // divTraining.className = 'training';
-  // divContent.appendChild(divTraining);
-
-  // // Criando a seção de exercício
-  // let divExercise = document.createElement('div');
-  // divExercise.className = 'exercise';
-  // divTraining.appendChild(divExercise);
-
-  // // Nome do exercício
-  // let pExercise = document.createElement('p');
-  // pExercise.className = 'exercise-name';  // Classe CSS para personalizar se necessário
-  // divExercise.appendChild(pExercise);
-
-  // // Repetições e séries
-  // let pRepeatAndSeries = document.createElement('p');
-  // pRepeatAndSeries.className = 'repeat-series';  // Classe CSS para personalizar se necessário
-  // divExercise.appendChild(pRepeatAndSeries);
-
-  // // Criando a seção de ações (botões)
-  // let divBtnActions = document.createElement('div');
-  // divBtnActions.className = 'div-btn-actions';
-  // divTraining.appendChild(divBtnActions);
-
-  // let btnPlus = document.createElement('button');
-  // btnPlus.className = 'style';
-  // divBtnActions.appendChild(btnPlus);
-
-  // let btnTrash = document.createElement('button');
-  // btnTrash.className = 'style';
-  // divBtnActions.appendChild(btnTrash);
-
-  // let btnPencil = document.createElement('button');
-  // btnPencil.className = 'style';
-  // divBtnActions.appendChild(btnPencil);
-
-  // let imgPlus = document.createElement('img');
-  // imgPlus.src = 'assets/img/plus.png';
-  // imgPlus.className = 'icon-actions';
-  // btnPlus.appendChild(imgPlus);
-
-  // let imgTrash = document.createElement('img');
-  // imgTrash.src = 'assets/img/trash.png';
-  // imgTrash.className = 'icon-actions';
-  // btnTrash.appendChild(imgTrash);
-
-  // let imgPencil = document.createElement('img');
-  // imgPencil.src = 'assets/img/pencil.png';
-  // imgPencil.className = 'icon-actions';
-  // btnPencil.appendChild(imgPencil);
-
-  // pExercise.innerHTML = train.name
-  // pRepeatAndSeries.innerHTML = `${train.repeat} x ${train.series}`
-  // document.getElementById('trainingsContainer').appendChild(divTraining);
-  // })
-
   const trainingsContainer = document.getElementById('trainingsContainer');
   trainingsContainer.innerHTML = '';
   
@@ -160,11 +95,14 @@ function addTraining(day) {
     imgTrash.className = 'icon-actions';
     btnTrash.appendChild(imgTrash);
     divBtnActions.appendChild(btnTrash);
-    
-    btnTrash.addEventListener('click', ()=>{
-      console.log('treino limpo');
-    })
 
+    // btnTrash.addEventListener('click', ()=>{
+    //   let training = JSON.parse(localStorage.getItem(day)) || [];
+    //   localStorage.removeItem(day)
+    //   divTraining.style.display = 'none'
+    //   divContent.style.display = 'none'
+
+    // })
 
     let btnPencil = document.createElement('button');
     btnPencil.className = 'style';
@@ -176,6 +114,7 @@ function addTraining(day) {
 
     // Adiciona o divContent com todo o conteúdo ao contêiner principal
     trainingsContainer.appendChild(divContent);
+    
 })
   
 }
@@ -187,18 +126,24 @@ btnAdd.addEventListener("click", (e) => {
   const day = params.get("day");
   // Recupera os dados existentes do localStorage
   let training = JSON.parse(localStorage.getItem(day)) || [];
+  let id = parseInt(localStorage.getItem("id")) || 1;
+    localStorage.setItem("id", id);
+    let trainingDay = training[day] || [];
+    let nextId = trainingDay.length > 0 ? trainingDay[trainingDay.length - 1].id + 1 : 1;
   // Cria o novo objeto de treinamento
   let newTraining = {
     name: nameExercise.value,
     repeat: repeatExercise.value,
     series: seriesExercise.value,
+    id: nextId
   };
    // Adiciona o novo objeto à lista de treinamentos
    training.push(newTraining);
   // Salva a lista atualizada no localStorage
   localStorage.setItem(day, JSON.stringify(training));
+  
   closeModal();
   addTraining(day)
-  console.log(newTraining);
+  console.log(id);
 });
 
