@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gym Project</title>
-    <script src="script.js" defer></script>
+    <script src="add-training.js" defer></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,6 +23,10 @@
             </button>
 
             <div class="modal">
+              <button onclick="closeModal()" class="close">
+                <img class="img-close" src="assets/img/marca-x.png" alt="" />
+              </button>
+
               <form class="form">
                 <label>Exercise name:</label>
                 <input type="text" class="input-form-exercise" />
@@ -30,13 +34,14 @@
                 <input type="text" class="input-form-repeat" />
                 <label>Series</label>
                 <input type="text" class="input-form-series" />
-                <button id="btn-add" class="btn-include-training">Add training</button>
+                <button id="btn-add" class="btn-include-training">
+                  Add training
+                </button>
               </form>
             </div>
 
-            <div class="training">
-              <label></label>
-              <label></label>
+            <div id="trainingsContainer">
+              <div class="modal-edit-training"></div>
             </div>
 
             <button onclick="backPage()" class="back-home">

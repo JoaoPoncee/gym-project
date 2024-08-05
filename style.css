@@ -70,7 +70,7 @@ body{
     margin: auto;
     padding: 20px;
     border-radius: 5px;
-    width: 70%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,14 +101,54 @@ body{
 }
 
 .training{
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
+
     font-size: 16px;
     justify-content: space-between;
-    /* border: 1px solid black; */
-    width: 90%;
 
+    /* border: 1px solid black; */
+    width: 100%;    
+    height: 80%;
+    color: white;
+    display: flex;
+   /* Coloca os elementos em uma coluna */
+   margin-left: 15px;
+
+}
+
+.repeat-series{
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    justify-content: space-between;
+    margin-top: 1px;
+}
+
+.exercise{
+    margin-top: 1px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.icon-actions{
+    width: 100%;
+    height: 100%;
+}
+
+.style{
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+}
+
+.div-btn-actions{
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+    margin-right: 15px;
+    
 }
 
 .modal{
@@ -116,13 +156,25 @@ body{
     margin: 0px;
     padding-bottom: 3px;
     border-radius: 5px;
-    width: 70%;
+    width: 80%;
     display: none;
     flex-direction: column;
     align-items: center;
     height: 500px;
     position: fixed;
     color: white;
+}
+
+.img-close{
+    width: 40px;
+    height: 40px;
+}
+
+.close{
+    background-color: transparent;
+    border: none;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
 .form{
@@ -134,4 +186,25 @@ body{
 
 .btn-include-training{
     margin-top: 10px;
+}
+
+#trainingsContainer{
+    height: 400px;
+    width: 300px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 7px;
+}
+
+.div-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+    background-color: #1f3455;
+    border-radius: 10px;
 }
