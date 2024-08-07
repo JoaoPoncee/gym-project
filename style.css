@@ -1,210 +1,241 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-*{
-    padding: 0;
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
 }
 
-body{
-    background-color: rgb(11, 1, 43);
-
+body {
+  background-color: rgb(11, 1, 43);
 }
 
-.main{
-    display: flex;
-    justify-content: center;
-    height: 667px;
-
+.main {
+  display: flex;
+  justify-content: center;
+  height: 667px;
 }
 
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    gap: 20px;
-    margin-top: 60px;
-    width: 300px;
-    
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 20px;
+  margin-top: 60px;
+  width: 300px;
 }
 
-.btn-week{
-    background-color: #568ade;
-    color: #ffffff;
-    width: 100%;
-    height: 60px;
-    border: none;
-    border-radius: 10px;   
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    font-style: italic;
+.btn-week {
+  background-color: #568ade;
+  color: #ffffff;
+  width: 100%;
+  height: 60px;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-style: italic;
 }
 
-.btn-week:hover{
-    background-color: #af91c3;
+.btn-week:hover {
+  background-color: #af91c3;
 }
 
-.icon{
-    width: 30px;
-    height: 30px;
-    
+.icon {
+  width: 30px;
+  height: 30px;
 }
 
-.div-training{
-    /* display: none; */
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
+.div-training {
+  /* display: none; */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
 }
 
-.div-training .training-content{
-    background-color: #568ade;
-    margin: auto;
-    padding: 20px;
-    border-radius: 5px;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 500px;
+.div-training .training-content {
+  background-color: #568ade;
+  margin: auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
 }
 
-.btn-add-training{
-    width: 80%;
-    height: 45px;
-    border: none;
-    font-style: italic;
+.btn-add-training {
+  width: 80%;
+  height: 45px;
+  border: none;
+  font-style: italic;
 }
 
-.back-home{
-    width: 30%;
-    height: 40px;
-    margin-bottom: 85px;
-    bottom: 0;
-    position: fixed;
-    border: none;
-    background-color: #568ade;
+.back-home {
+  width: 30%;
+  height: 40px;
+  margin-bottom: 85px;
+  bottom: 0;
+  position: fixed;
+  border: none;
+  background-color: #568ade;
 }
 
-.img-arrow{
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
+.img-arrow {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
 }
 
-.training{
+.training {
+  font-size: 16px;
+  justify-content: space-between;
 
-    font-size: 16px;
-    justify-content: space-between;
-
-    /* border: 1px solid black; */
-    width: 100%;    
-    height: 80%;
-    color: white;
-    display: flex;
-   /* Coloca os elementos em uma coluna */
-   margin-left: 15px;
-
+  /* border: 1px solid black; */
+  width: 100%;
+  height: 80%;
+  color: white;
+  display: flex;
+  /* Coloca os elementos em uma coluna */
+  margin-left: 15px;
 }
 
-.repeat-series{
-    display: flex;
-    flex-direction: row;
-    gap: 3px;
-    justify-content: space-between;
-    margin-top: 1px;
+.repeat-series {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  justify-content: space-between;
+  margin-top: 1px;
 }
 
-.exercise{
-    margin-top: 1px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    
+.exercise {
+  margin-top: 1px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.icon-actions{
-    width: 100%;
-    height: 100%;
+.icon-actions {
+  width: 100%;
+  height: 100%;
 }
 
-.style{
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
-    border: none;
+.style {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
 }
 
-.div-btn-actions{
-    display: flex;
-    gap: 12px;
-    margin-top: 15px;
-    margin-right: 15px;
-    
+.div-btn-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+  margin-right: 15px;
 }
 
-.modal{
-    background-color: rgb(11, 1, 43);
-    margin: 0px;
-    padding-bottom: 3px;
-    border-radius: 5px;
-    width: 80%;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    height: 500px;
-    position: fixed;
-    color: white;
+.modal {
+  background-color: rgb(11, 1, 43);
+  margin: 0px;
+  padding-bottom: 3px;
+  border-radius: 5px;
+  width: 80%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+  position: fixed;
+  color: white;
 }
 
-.img-close{
-    width: 40px;
-    height: 40px;
+.img-close {
+  width: 40px;
+  height: 40px;
 }
 
-.close{
-    background-color: transparent;
-    border: none;
-    margin-left: 10px;
-    margin-top: 10px;
+.close {
+  background-color: transparent;
+  border: none;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
-.form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 150px;
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150px;
 }
 
-.btn-include-training{
-    margin-top: 10px;
+.btn-include-training {
+  margin-top: 10px;
+  width: 100px;
 }
 
-#trainingsContainer{
-    height: 400px;
-    width: 300px;
-    overflow: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    margin-top: 7px;
+#trainingsContainer {
+  height: 400px;
+  width: 300px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 7px;
 }
 
-.div-content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 70px;
-    background-color: #1f3455;
-    border-radius: 10px;
+.div-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 70px;
+  background-color: #1f3455;
+  border-radius: 10px;
+}
+
+.modal-edit-training {
+  width: 80%;
+  height: 300px;
+  background: #1f3455;
+  bottom: 220px;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: absolute;
+  top: 150px;
+  left: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  
+}
+
+/* Estilos para o overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+
+/* Estilos para o conteúdo do overlay */
+
+.input-edit {
+  width: 200px;
+  height: 20px;
+  text-align: center;
 }

@@ -14,7 +14,7 @@ function pageNavigation(day) {
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(document.location.search);
   const day = params.get("day");
-  addTraining(day);
+  
 });
 
 function openModal() {

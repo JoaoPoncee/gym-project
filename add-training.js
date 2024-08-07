@@ -2,6 +2,11 @@ const nameExercise = document.querySelector(".input-form-exercise");
 const repeatExercise = document.querySelector(".input-form-repeat");
 const seriesExercise = document.querySelector(".input-form-series");
 const btnAdd = document.querySelector("#btn-add");
+const arrowBack = document.querySelector(".back-home");
+const modalEditTraining = document.createElement("div");
+const buttonUpdate = document.createElement("button");
+const overlay = document.createElement("div");
+const inputEdit = document.createElement("input");
 
 function backPage() {
   window.location.href = "index.html";
@@ -9,7 +14,7 @@ function backPage() {
 
 function openModal() {
   const modal = document.querySelector(".modal");
-  const arrowBack = document.querySelector(".img-arrow, .back-home");
+
   const actualStyle = modal.style.display;
   arrowBack.style.display = "none";
   modal.style.display = "flex";
@@ -30,8 +35,6 @@ function closeModal() {
   seriesExercise.value = " ";
 }
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(document.location.search);
   const day = params.get("day");
@@ -39,8 +42,24 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function editTraining() {
-
+  const contentTraining = document.querySelector(".training-content");
+  modalEditTraining.className = "modal-edit-training";
+  contentTraining.appendChild(modalEditTraining);
+  overlay.className = "overlay";
+  document.body.appendChild(overlay);
+  overlay.appendChild(modalEditTraining);
+  inputEdit.className = "input-edit";
+  modalEditTraining.appendChild(inputEdit);
+  modalEditTraining.appendChild(buttonUpdate);
 }
+
+buttonUpdate.className = "button-update";
+buttonUpdate.innerHTML = "Update";
+
+buttonUpdate.addEventListener("click", () => {
+  modalEditTraining.style.display = "none";
+  overlay.style.display = "none";
+});
 
 function addTraining(day) {
   const trainingsContainer = document.getElementById("trainingsContainer");
@@ -48,6 +67,7 @@ function addTraining(day) {
 
   // Recupera os treinos do localStorage
   let training = JSON.parse(localStorage.getItem(day)) || [];
+  console.log(training);
 
   // Itera sobre cada treino e cria os elementos necessários
   training.forEach((train) => {
@@ -93,6 +113,14 @@ function addTraining(day) {
     btnTrash.appendChild(imgTrash);
     divBtnActions.appendChild(btnTrash);
 
+    let btnPencil = document.createElement("button");
+    btnPencil.className = "style edit-button";
+    let imgPencil = document.createElement("img");
+    imgPencil.src = "assets/img/pencil.png";
+    imgPencil.className = "icon-actions";
+    btnPencil.appendChild(imgPencil);
+    divBtnActions.appendChild(btnPencil);
+
     // function removeItemArray(){
     //   let training = JSON.parse(localStorage.getItem(day)) || [];
     //   // Filtra o array para remover o item com id igual a 2
@@ -108,18 +136,22 @@ function addTraining(day) {
 
     // btnTrash.addEventListener("click", removeItemArray());
 
-    let btnPencil = document.createElement("button");
-    btnPencil.className = "style";
-    let imgPencil = document.createElement("img");
-    imgPencil.src = "assets/img/pencil.png";
-    imgPencil.className = "icon-actions";
-    btnPencil.appendChild(imgPencil);
-    divBtnActions.appendChild(btnPencil);
-
     // Adiciona o divContent com todo o conteúdo ao contêiner principal
     trainingsContainer.appendChild(divContent);
   });
 }
+
+const editButton = document.getElementsByClassName("edit-button");
+console.log(editButton);
+
+Array.from(editButton).forEach((button) => {
+  button.addEventListener("click", () => {
+    console.log('oi');
+    modalEditTraining.style.display = "flex";
+    overlay.style.display = "flex";
+    editTraining();
+  });
+});
 
 btnAdd.addEventListener("click", (e) => {
   e.preventDefault();
@@ -146,5 +178,4 @@ btnAdd.addEventListener("click", (e) => {
 
   closeModal();
   addTraining(day);
-  console.log(id);
 });
