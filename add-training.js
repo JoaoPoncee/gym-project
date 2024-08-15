@@ -1,35 +1,43 @@
 const nameExercise = document.querySelector(".input-form-exercise");
 const repeatExercise = document.querySelector(".input-form-repeat");
 const seriesExercise = document.querySelector(".input-form-series");
-const btnAdd = document.querySelector("#btn-add");
+const modalAddTraining = document.querySelector("#btn-add");
 const arrowBack = document.querySelector(".back-home");
 const modalEditTraining = document.createElement("div");
-const buttonUpdate = document.createElement("button");
-const overlay = document.createElement("div");
-const inputEdit = document.createElement("input");
+const buttonUpdate = document.querySelector("#btn-update");
+const overlay = document.querySelector(".overlay");
+const inputEditName = document.createElement("input");
+const inputEditSeries = document.createElement("input");
+const inputEditRep = document.createElement("input");
+const buttonAddTraining = document.querySelector(".btn-add-training");
 
 function backPage() {
   window.location.href = "index.html";
 }
 
-function openModal() {
-  const modal = document.querySelector(".modal");
+function openModal(modalDiv) {
+  const modal = document.querySelector(modalDiv);
 
   const actualStyle = modal.style.display;
   arrowBack.style.display = "none";
   modal.style.display = "flex";
   if (actualStyle == "block") {
     modal.style.display = "none";
+    overlay.style.display = "none";
   } else {
     modal.style.display = "block";
+    overlay.style.display = "flex";
   }
 }
 
-function closeModal() {
-  const modal = document.querySelector(".modal");
+buttonAddTraining.addEventListener("click", () => openModal("#modal-add"));
+
+function closeModal(modalDiv) {
+  const modal = document.querySelector(modalDiv);
   const arrowBack = document.querySelector(".img-arrow, .back-home");
   arrowBack.style.display = "block";
   modal.style.display = "none";
+  overlay.style.display = "none";
   nameExercise.value = " ";
   repeatExercise.value = " ";
   seriesExercise.value = " ";
@@ -42,32 +50,25 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function editTraining() {
-  const contentTraining = document.querySelector(".training-content");
-  modalEditTraining.className = "modal-edit-training";
-  contentTraining.appendChild(modalEditTraining);
-  overlay.className = "overlay";
-  document.body.appendChild(overlay);
-  overlay.appendChild(modalEditTraining);
-  inputEdit.className = "input-edit";
-  modalEditTraining.appendChild(inputEdit);
-  modalEditTraining.appendChild(buttonUpdate);
+  // modalEditTraining.className = "modal-edit-training";
+  // contentTraining.appendChild(modalEditTraining);
+  openModal("#modal-edit");
+  // inputEditName.className = "input-edit-name";
+  // inputEditRep.className = "input-edit-rep"
+  // inputEditSeries.className = "input-edit-series"
+
+  // modalEditTraining.appendChild(inputEditName);
+  // modalEditTraining.appendChild(inputEditRep);
+  // modalEditTraining.appendChild(inputEditSeries);
 }
-
-buttonUpdate.className = "button-update";
-buttonUpdate.innerHTML = "Update";
-
-buttonUpdate.addEventListener("click", () => {
-  modalEditTraining.style.display = "none";
-  overlay.style.display = "none";
-});
 
 function addTraining(day) {
   const trainingsContainer = document.getElementById("trainingsContainer");
   trainingsContainer.innerHTML = "";
 
   // Recupera os treinos do localStorage
+
   let training = JSON.parse(localStorage.getItem(day)) || [];
-  console.log(training);
 
   // Itera sobre cada treino e cria os elementos necessários
   training.forEach((train) => {
@@ -77,6 +78,7 @@ function addTraining(day) {
     //Div dos treinos
     let divTraining = document.createElement("div");
     divTraining.className = "training";
+    divTraining.setAttribute("data-exercise-id", train.id);
     divContent.appendChild(divTraining);
 
     let divExercise = document.createElement("div");
@@ -118,6 +120,10 @@ function addTraining(day) {
     let imgPencil = document.createElement("img");
     imgPencil.src = "assets/img/pencil.png";
     imgPencil.className = "icon-actions";
+    btnPencil.addEventListener("click", () => {
+      modalEditTraining.style.display = "flex";
+      editTraining();
+    });
     btnPencil.appendChild(imgPencil);
     divBtnActions.appendChild(btnPencil);
 
@@ -141,19 +147,7 @@ function addTraining(day) {
   });
 }
 
-const editButton = document.getElementsByClassName("edit-button");
-console.log(editButton);
-
-Array.from(editButton).forEach((button) => {
-  button.addEventListener("click", () => {
-    console.log('oi');
-    modalEditTraining.style.display = "flex";
-    overlay.style.display = "flex";
-    editTraining();
-  });
-});
-
-btnAdd.addEventListener("click", (e) => {
+modalAddTraining.addEventListener("click", (e) => {
   e.preventDefault();
   const params = new URLSearchParams(document.location.search);
   const day = params.get("day");
@@ -175,7 +169,42 @@ btnAdd.addEventListener("click", (e) => {
   training.push(newTraining);
   // Salva a lista atualizada no localStorage
   localStorage.setItem(day, JSON.stringify(training));
-
-  closeModal();
+  closeModal("#modal-add");
   addTraining(day);
+});
+
+buttonUpdate.addEventListener("click", (e) => {
+  e.preventDefault();
+  const params = new URLSearchParams(document.location.search);
+  const day = params.get("day");
+  modalEditTraining.style.display = "none";
+
+  let training = JSON.parse(localStorage.getItem(day)) || [];
+  const valueNewExercise = document.querySelector("#edit-exercise");
+  const valueNewSeries = document.querySelector("#edit-series");
+  const valueNewRepeat = document.querySelector("#edit-repeat");
+  const trainingId = document
+    .querySelector(".training")
+    .getAttribute("data-exercise-id");
+  console.log(trainingId, "idddd");
+  const newTraining = training.filter(
+    (trainingUpdate) => trainingUpdate.id !== Number(trainingId)
+  );
+  console.log(newTraining, "TIREI");
+
+  let updateTraining = {
+    name: valueNewExercise.value,
+    repeat: valueNewRepeat.value,
+    series: valueNewSeries.value,
+    id: Number(trainingId),
+  };
+  console.log(updateTraining, "ESCREVI");
+  newTraining.push(updateTraining);
+  console.log(newTraining, "COLOQUEI");
+  localStorage.setItem(day, JSON.stringify(newTraining));
+
+  console.log(newTraining);
+
+  inputEditName.value = " ";
+  closeModal("#modal-edit");
 });

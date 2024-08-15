@@ -14,39 +14,46 @@
     />
   </head>
   <body>
+    <div class="overlay">
+      <div class="modal" id="modal-add">
+        <button onclick="closeModal('#modal-add')" class="close">
+          <img class="img-close" src="assets/img/marca-x.png" alt="" />
+        </button>
+
+        <form class="form">
+          <label>Exercise name:</label>
+          <input type="text" class="input-form-exercise" />
+          <label>Repeat</label>
+          <input type="text" class="input-form-repeat" />
+          <label>Series</label>
+          <input type="text" class="input-form-series" />
+          <button id="btn-add" class="btn-include-training">Add</button>
+        </form>
+      </div>
+
+      <div class="modal" id="modal-edit">
+        <button onclick="closeModal('#modal-edit')" class="close">
+          <img class="img-close" src="assets/img/marca-x.png" alt="" />
+        </button>
+
+        <form class="form">
+          <label>Exercise name:</label>
+          <input type="text" class="input-form-exercise" id="edit-exercise"/>
+          <label>Repeat</label>
+          <input type="text" class="input-form-repeat" id="edit-repeat"/>
+          <label>Series</label>
+          <input type="text" class="input-form-series" id="edit-series"/>
+          <button id="btn-update" class="btn-include-training">Update</button>
+        </form>
+      </div>
+    </div>
     <div class="main">
       <div class="container">
         <div class="div-training">
           <div class="training-content">
-            <button onclick="openModal()" class="btn-add-training">
-              Add Training
-            </button>
+            <button class="btn-add-training">Add Training</button>
 
-            <div class="modal">
-              <button onclick="closeModal()" class="close">
-                <img class="img-close" src="assets/img/marca-x.png" alt="" />
-              </button>
-
-              <form class="form">
-                <label>Exercise name:</label>
-                <input type="text" class="input-form-exercise" />
-                <label>Repeat</label>
-                <input type="text" class="input-form-repeat" />
-                <label>Series</label>
-                <input type="text" class="input-form-series" />
-                <button id="btn-add" class="btn-include-training">
-                  Add
-                </button>
-              </form>
-            </div>
-
-            <div id="trainingsContainer">
-              
-            </div>
-
-            <!-- <div class="modal-edit-training">
-
-            </div> -->
+            <div id="trainingsContainer"></div>
 
             <button onclick="backPage()" class="back-home">
               <img class="img-arrow" src="assets/img/flecha.png" alt="" />
